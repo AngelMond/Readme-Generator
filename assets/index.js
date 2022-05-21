@@ -1,6 +1,7 @@
+//Importing modules
 const inquirer = require('inquirer');
 const fs = require('fs');
-const badge = require('./badges.js');
+const badge = require('../assets/badges');
 
 //Badges
 const HTML = badge.html;
@@ -59,83 +60,106 @@ inquirer
 ])
   .then((response) => {
 
-   
+   //Destructuring my responses
     const {title, introduction, about, technologies, technologiesDescription, challenges} = response;
-    
-    if(technologies[0]){
-         technologies[0] = HTML;
-    }
 
-    if(technologies[1]){
-        technologies[1] = CSS;
-    }
+    //Loop to pass the badge from the badges module when user choose any badge
+   for(let i in technologies){
 
-    if(technologies[2]){
-        technologies[2] = JavaScript;
-    }
+      if(technologies[i] === 'HTML'){
 
-    if(technologies[3]){
-        technologies[3] = Bootstrap;
-    }
+         technologies[i] = HTML;
+      }
 
-    if(technologies[4]){
-        technologies[4] = Tailwind;
-    }
+      if(technologies[i] === 'CSS'){
 
-    if(technologies[5]){
-        technologies[5] = SASS;
-    }
+         technologies[i] = CSS;
+      }
 
-    if(technologies[6]){
-        technologies[6] = NodeJS;
-    }
+      if(technologies[i] === 'JavaScript'){
 
-    if(technologies[7]){
-        technologies[7] = VueJS;
-    }
+         technologies[i] = JavaScript;
+      }
 
-    if(technologies[8]){
-        technologies[8] = React;
-    }
+      if(technologies[i] === 'Bootstrap'){ 
 
-    if(technologies[9]){
-        technologies[9] = Angular;
-    }
+         technologies[i] = Bootstrap;
+      }
 
-    if(technologies[10]){
-        technologies[10] = Java;
-    }
+      if(technologies[i] === 'Tailwind'){
 
-    if(technologies[11]){
-        technologies[11] = TypeScript;
-    }
+         technologies[i] = Tailwind;
+      }
 
-    if(technologies[12]){
-        technologies[12] = PHP;
-    }
+      if(technologies[i] === 'SASS'){
 
-    if(technologies[13]){
-        technologies[13] = Phyton;
-    }
+         technologies[i] = SASS;
+      }
 
-    if(technologies[14]){
-        technologies[14] = Github;
-    }
+      if(technologies[i] === 'NodeJS'){
 
-    if(technologies[15] ){
-        technologies[15] = Git;
-    }
+         technologies[i] = NodeJS;
+      }
 
-    if(technologies[16]){
-        technologies[16] = MongoDB;
-    }
+      if(technologies[i] === 'VueJS'){
 
-    if(technologies[17]){
-        technologies[17] = MySQL;
-    }
+         technologies[i] = VueJS;
+      }
 
+      if(technologies[i] === 'React'){
 
-    const writeReadme = ` # ${title} 
+         technologies[i] = React;
+      }
+
+      if(technologies[i] === 'Angular'){
+
+         technologies[i] = Angular;
+      }
+
+      if(technologies[i] === 'Java'){
+
+         technologies[i] = Java;
+      }
+
+      if(technologies[i] === 'TypeScript'){
+
+         technologies[i] = TypeScript;
+      }
+
+      if(technologies[i] === 'PHP'){
+
+         technologies[i] = PHP;
+      }
+
+      if(technologies[i] === 'Phyton'){
+
+         technologies[i] = Phyton;
+      }
+
+      if(technologies[i] === 'Github'){
+
+         technologies[i] = Github;
+      }
+
+      if(technologies[i] === 'Git'){
+
+         technologies[i] = Git;
+      }
+
+      if(technologies[i] === 'MongoDB'){
+
+         technologies[i] = MongoDB;
+      }
+
+      if(technologies[i] === 'MySQL'){
+
+         technologies[i] = MySQL;
+      }
+
+   }
+
+//Here we are writing the README file
+const writeReadme = `# ${title} 
 
 # Introduction to the project
 * ${introduction}.
@@ -144,7 +168,7 @@ inquirer
 * ${about}.
 
 # Technologies used
-<div style="display=flex flex-row flex-wrap ">
+<div style="display=flex flex-row flex-wrap">
 ${technologies}
 </div>
 
@@ -153,11 +177,11 @@ ${technologies}
 
 # Challenges
 * ${challenges}.
-    
+      
 `
+   //Creating README file with the fs library
+   fs.writeFile('README.md', writeReadme, (err)=> err ? console.error(err) : console.log('Readme successfully created!') )
     
-    fs.writeFile('README.md', writeReadme, (err)=> err ? console.error(err) : console.log('Readme successfully created!') )
-
   })
   .catch((error) => {
     console.log(error)
