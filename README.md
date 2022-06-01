@@ -1,3 +1,4 @@
+
 # Readme-Generator
 
 # Introduction to the project
@@ -29,4 +30,10 @@
 
 # Issues
 * There's just one issue and that when the user add a badge, the program will add a comma between the badges, so the commas will be showed in the readme if the user dont delete them and I still didn't figure out how to prevent that, think maybe it's something about the inquirer package.
+
+# Issues solved
+* Already solve the problem using .replace() method before generating the README and cleaning the commas from the README.
       
+# Link to the video
+* In the video I can show you the functionality of the program through the user interaction from the command line and the generating the README.
+<div><a href="https://drive.google.com/file/d/13rTC_SZNWjC1gxLvjIfu8fSHI34oxx2g/view" target="_blank">Video Here!</a></div>
