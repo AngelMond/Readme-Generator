@@ -1,4 +1,4 @@
- # Readme-Generator
+# Readme-Generator
 
 # Introduction to the project
 * This program allows any developer create almost automatically a readme file, algo the user can add badges to the readme in order to have a polish and very nice readme file.

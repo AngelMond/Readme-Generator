@@ -1,7 +1,7 @@
 //Importing modules
 const inquirer = require('inquirer');
 const fs = require('fs');
-const badge = require('../assets/badges');
+const badge = require('./assets/badges');
 
 //Badges
 const HTML = badge.html;
@@ -24,7 +24,16 @@ const MongoDB = badge.mongoDB;
 const MySQL = badge.mysql;
 
 
+
+
+function readmeGenerator(){
+
+console.log(' ----------------------------------------')
+console.log('|   WELCOME TO THIS README GENERATOR!    |')
+console.log(' ----------------------------------------')
+
 inquirer
+
   .prompt([
       {
     type:'input',
@@ -55,7 +64,7 @@ inquirer
      {
     type: 'input',
     name: 'challenges',
-    message: 'What challenges do you go through? ',
+    message: 'What challenges did you go through? ',
      },
 ])
   .then((response) => {
@@ -179,10 +188,17 @@ ${technologies}
 * ${challenges}.
       
 `
+//Cleaning commas between the badges
+const cleanREADME = writeReadme.replace(/[,]/g, ' ');
+
    //Creating README file with the fs library
-   fs.writeFile('README.md', writeReadme, (err)=> err ? console.error(err) : console.log('Readme successfully created!') )
+   fs.writeFile('README.md', cleanREADME, (err)=> err ? console.error(err) : console.log('Readme successfully created!') )
     
   })
   .catch((error) => {
     console.log(error)
   });
+
+}
+
+readmeGenerator();
