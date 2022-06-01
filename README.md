@@ -1,4 +1,3 @@
-
 # Readme-Generator
 
 # Introduction to the project
@@ -6,7 +5,7 @@
 
 # About this project 
 
-* This program will save a precious time for developers, so they can focus more on their code.The process to generate a readme file have the following structure.
+* This program will save precious time for developers, so they can focus more on their code.The process to generate a readme file have the following structure.
 * First: The user will be asked to write a title for the readme.
 * Second: The user will be asked to write a short introduction for the project.
 * Third: The user will be asked to tell us about the project and if the project solve any kind of problem.
@@ -36,4 +35,4 @@
       
 # Link to the video
 * In the video I can show you the functionality of the program through the user interaction from the command line and the generating the README.
-<div><a href="https://drive.google.com/file/d/13rTC_SZNWjC1gxLvjIfu8fSHI34oxx2g/view" target="_blank">Video Here!</a></div>
+<div><a href="https://drive.google.com/file/d/1ofPO_yNqRX_IUzrWsBoh2kE0rskT_P2S/view?usp=sharing" target="_blank">Video Here!</a></div>
